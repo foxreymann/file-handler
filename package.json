@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/foxreymann/file-handler#readme",
   "dependencies": {
-    "chokidar": "^3.5.3"
+    "chokidar": "^3.5.3",
+    "commander": "^9.4.0"
   }
 }
