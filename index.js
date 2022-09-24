@@ -3,8 +3,8 @@ const fs = require('fs')
 const path = require('path');
 const commander = require('commander');
 
-const source = '/tmp/thura1'
-const dest = '/tmp/thura2'
+const source = '~/Downloads'
+const dest = '~/Desktop'
 
 const program = commander.program
 	.option("--source <source>", "Directory to watch", "/tmp/thura1")
