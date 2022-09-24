@@ -9,16 +9,19 @@ const dest = '/tmp/thura2'
 const program = commander.program
 	.option("--source <source>", "Directory to watch", "/tmp/thura1")
 	.option("--dest <dest>", "Directory to move files to", "/tmp/thura2")
+	.option("--rename <rename>", "New name for moved file")
 	.parse(process.argv)
 
 const opts = program.opts()
+
+console.log({opts})
 
 const watcher = chokidar.watch(opts.source, {
   ignoreInitial: true
 });
 
 watcher.on('add', sourcePath => {
-  const filename = path.basename(sourcePath)
+  const filename = opts.rename || path.basename(sourcePath)
   const destPath = path.join(opts.dest, filename)
 
   // log the rename
